@@ -1,0 +1,21 @@
+.signup{
+    width: 29%;
+    padding: 2% 5% 3% 8%;
+    margin: auto;
+    margin-top: 6%;
+    box-shadow: 0 0 4px 2px #716b6b;
+}
+.signup_header{
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.signup_text{
+    font-size:18px;
+}
+.submit_btn{
+    padding: 3% 8% 4% 8%;
+    margin: 9% 6% -6% 17%;
+    font-weight: 700;
+    font-family: inherit;
+}

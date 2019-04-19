@@ -1,0 +1,14 @@
+.hod{
+    width: 36%;
+    padding: 3% 3% 2% 4%;
+    margin: auto;
+    box-shadow: 0 0 4px 2px #716b6b;
+}
+
+table{
+    border : 1px solid black;
+}
+
+.display{
+    margin: 1%;
+}
