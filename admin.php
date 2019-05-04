@@ -1,44 +1,121 @@
 <?php include "./includes/header.php" ?>
 <?php require "./database/dataconnect.php";
 
-$error = "";
-echo "page working";
-if (isset($_POST['submit'])) {
 
-    $user = $_POST['user'];
-    $pswd = $_POST['pswd'];
-    $email = $_POST['email'];	
+$userErr = $nameErr= $pswdErr = $emailErr = $cnfrmpswdErr= "" ;
 
-    if(empty($user) || empty($pswd) || empty($email)){
-        $error = "Please enter the details";
+$user = $name= $pswd = $email = $cnfrmpswd= "";
+
+
+if (isset($_POST['submit']))  {
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+      } else {
+        $name = $_POST["name"];
+        // check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+          $nameErr = "Only letters and white space allowed"; 
+        }
+      }
+    
+    if (empty($_POST["user"])) {
+      $userErr = "user is required";
+    } else {
+      $user = $_POST["user"];
+      // check if name only contains letters and whitespace
+      if (!preg_match("/^[a-zA-Z0-9]*$/",$user)) {
+        $userErr = "only letters and numbers allowed"; 
+      }
     }
-    else{
+    
+    if (empty($_POST["email"])) {
+      $emailErr = "Email is required";
+    } else {
+      $email = $_POST["email"];
+      // check if e-mail address is well-formed
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format"; 
+      }
+    }
+      
+    if (empty($_POST["pswd"] )) {
+      $pswdErr = "pswd is required";
+    } else {
+      $pswd = $_POST["pswd"];
+    }
+
+    if (empty($_POST["cnfrmpswd"] )) {
+        $cnfrmpswdErr = "pswd is required";
+      } else {
+        $cnfrmpswd = $_POST["cnfrmpswd"];
+      }
+
+      if($pswd==$cnfrmpswd)
+      {
+            $pswd=$_POST["pswd"];
+      }else{
+            $pswdErr = "Does not match";
+      }
+
+
+  }
+
+    if(empty($user) ||empty($name) || empty($pswd) ||empty($cnfrmpswd) || empty($email)){
+
+    }
+    else
+    {
         
-        $insert_data = "insert into adminlogin(username,email,password) values('$user','$email','$pswd')";
+        $insert_data = "insert into adminlogin(username,name,email,password) values('$user','$name','$email','$pswd')";
         $con->query($insert_data);
         header("location: feedback.php");        
     }
-}
+ ?>
+<div class="maindiv">
 
-?>
+    <div class="signup">
+        <center><h3 class="signup_header">Signup</h3></center>
+            <form action="" method ="POST" >
+            <div class="row">
+                <div class="input-field col s6">
+                    <label class="signup_text">Name</label><br>
+                    <input type="text" class="form-control" name="name" placeholder="Enter name" value="<?php echo $name;?>">
+                        <span class="form-text text-muted" id="error">* 
+                            <?php echo $nameErr;?>
+                        </span>
+                </div>
 
-
-<div class="signup">
-    <h2 class="signup_header">Signup</h2>
-        <form action="" method ="POST" >
-
-            <label class="signup_text">Username</label>
-
-            <input type="text" name="user"><br>
-
-            <label class="signup_text">emailId</label>
-            <input type="text" name="email"><br>
-
-            <label class="signup_text">password</label>
-            <input type="text" name="pswd"><br>
-            
-            <input type="submit" name="submit" class="submit_btn" value="Register">
-            <?php echo "<div>$error</div>" ?>
-        </form>
-</div>
+                <div class="input-field col s6">
+                    <label class="signup_text">Username</label><br>
+                    <input type="text" class="form-control" name="user" placeholder="Enter username" value="<?php echo $user;?>">
+                        <span class="form-text text-muted" id="error">* 
+                            <?php echo $userErr;?>
+                        </span>
+                </div>
+            </div>
+                <label class="signup_text">EmailId</label><br>
+                <input type="text" class="form-control" name="email" placeholder="Enter email" value="<?php echo $email;?>">
+                    <span class="form-text text-muted" id="error">* 
+                        <?php echo $emailErr;?>
+                    </span>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label class="signup_text">Password</label><br>
+                        <input type="password" class="form-control" name="pswd" placeholder="Enter password" value="<?php echo $pswd;?>">
+                                <span class="form-text text-muted" id="error">* 
+                                    <?php echo $pswdErr;?>
+                                </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label class="signup_text">Confirm Password</label><br>
+                        <input type="password" class="form-control" name="cnfrmpswd" placeholder="Enter confirm password" value="<?php echo $cnfrmpswd;?>">
+                                <span class="form-text text-muted" id="error">* 
+                                    <?php echo $cnfrmpswdErr;?>
+                            </span><br>
+                    </div>
+                </div>
+                <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Register">
+            </form>
+    </div> 
+</div> 
 

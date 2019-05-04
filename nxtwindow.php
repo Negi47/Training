@@ -17,7 +17,7 @@
       else
       {
        
-        $insert_data = "insert into fed2(presentation,topic,level,res ,future,recc) values('$exec','$topic','$level','$res','$future','$recc')";
+        $insert_data = "insert into feedback2(presentation,topic,level,res ,future,recc) values('$exec','$topic','$level','$res','$future','$recc')";
         $res = $con->query($insert_data);
         if(!$res)
         {

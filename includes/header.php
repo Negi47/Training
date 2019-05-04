@@ -18,14 +18,27 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-  <a class="navbar-brand" href="#"><img src="Images/brand.png"  width="80" height="40"></a>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" id="header">
+  <a class="navbar-brand-left" id="leftimg" href="#"><img src="Images/brand.png"  width="80" height="40"></a>
+  <div><span class="headtag">RAMAIH INSTITUE OF MANAGEMENT AND SCIENCES</span></div>
   <ul class="navbar-nav">
+
+    <?php 
+    
+    $url = "http://localhost/TeacherTraining/test.php";
+
+    $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
+                "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
+                $_SERVER['REQUEST_URI']; 
+
+    if ($link==$url):
+    
+    ?>
+
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <button type="button" name="Log" value="Logout" >Logout</button> 
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
+
+    <?php endif; ?>
   </ul>
 </nav>

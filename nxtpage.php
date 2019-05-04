@@ -33,15 +33,15 @@
 	<form action="" method="POST">
 		
 		<label class="understand">a) Understanding</label><br>        
-			<input type="radio" name="understand",value="Good">Good
-			<input type="radio" name="understand",value="Average">Average
-			<input type="radio" name="understand",value="Poor">Poor<br><br>
+			<input type="radio" name="understand" value="Good">Good
+			<input type="radio" name="understand" value="Average">Average
+			<input type="radio" name="understand" value="Poor">Poor<br><br>
 	
 		<label class="Job">b) Application at Job:</label><br>
-			<input type="radio" name="Job",value="well">Applies Well
-			<input type="radio" name="Job",value="eviden">No evidence of application
-			<input type="radio" name="Job",value="Lack">Exhibits Lack of understanding
-			<input type="radio" name="Job",value="Knowledgeable">Indifferent though Knowledgeable <br/><br/>
+			<input type="radio" name="Job" value="well">Applies Well
+			<input type="radio" name="Job" value="eviden">No evidence of application
+			<input type="radio" name="Job" value="Lack">Exhibits Lack of understanding
+			<input type="radio" name="Job" value="Knowledgeable">Indifferent though Knowledgeable <br/><br/>
 
 		<label class="remarks">c) General Remarks:</label><br>
 			<textarea name="remarks" class="txtarea">Enter text here..</textarea><br>

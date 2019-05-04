@@ -4,15 +4,10 @@
   $tabledata = array();
   if(isset($_POST['submit'])) {
 
-    $emp_name= $_POST["emp_name"];
-      
-      if(empty($emp_name)) {     
-        $error = "Please fill faculty name";
-      }
-      else                                                   
-      {
-		$retrieve_data = "select * from feedback where empname='" . $emp_name ."'";
-		$retrieve_data = "select * from fed2 where empname='" . $emp_name ."'";
+		$retrieve_data = "select * from feedback.empname,feedback.dept,feedback.training,feedback.org,feedback.date,feeback2.presentation,
+											feedback2.topic,feedback2.level,feedback2.res,feedback2.future,feedback2.recc from feedback 
+											inner join feedback2 on feedback.eid=feedback2.eid ";
+		
 		$result = $con->query($retrieve_data);
 		if($result->num_rows > 0)
 		{
@@ -21,7 +16,7 @@
 				$tabledata[] = $row;
 			}
 		}
-      }   
+       
   }
 ?>
 
@@ -32,8 +27,8 @@
 
 <div class="hod">
 	<form action="" method="POST">
-		<label class="name">Name: </label>
-  			<input type="text" name="emp_name"/><br/>
+		<!-- <label class="name">Name: </label>
+  			<input type="text" name="emp_name"/><br/> -->
 		<!-- <label class="understand">a) Understanding</label><br>        
 			<input type="radio" name="understand",value="Good">Good
 			<input type="radio" name="understand",value="Average">Average
@@ -80,14 +75,14 @@
 					echo "<td>" . $value['training'] . "</td>";
 					echo "<td>" . $value['org'] ."</td>";
 					echo "<td>" . $value['date'] ."</td>";
-					echo "<td>" . $value['presentation'] . "</td>";
-					echo "<td>" . $value['topic'] . "</td>";
-					echo "<td>" . $value['res'] . "</td>";
-					echo "<td>" . $value['future'] ."</td>";
-					echo "<td>" . $value['recc'] ."</td>";
+					// echo "<td>" . $value['presentation'] . "</td>";
+					// echo "<td>" . $value['topic'] . "</td>";
+					// echo "<td>" . $value['res'] . "</td>";
+					// echo "<td>" . $value['future'] ."</td>";
+					// echo "<td>" . $value['recc'] ."</td>";
 
-					echo "<td>" .'<input type="radio" name="emp_name"  checked> '. "<td>";
-					echo "<td>" . '<button name="Review"><a href="./nxtpage.php">Review</a></button>' . "<td>";
+					// echo "<td>" .'<input type="radio" name="emp_name"  checked> '. "<td>";
+					// echo "<td>" . '<button name="Review"><a href="./nxtpage.php">Review</a></button>' . "<td>";
 					echo "</tr>";
 				}
 			?>
