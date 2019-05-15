@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     }
     else{
        
-        $search_data = "select *from adminlogin where username = '$user'  and password='$pswd'";
+        $search_data = "select *from admin where email = '$email'  and password='$pswd'";
         $search_result = $con->query($search_data);
 
         if($search_result->num_rows > 0)
@@ -34,15 +34,20 @@ if (isset($_POST['submit'])) {
 
 
 <div class="signup">
-    <h2 class="signup_header">Login</h2>
+    <center><h2 class="signup_header">Login</h2></center>
         <form action="" method ="POST" >
-
-            <label class="signup_text">Username</label>
-            <input type="text" name="user" class="form-control" placeholder="Enter email"><br>
-
-            <label class="signup_text">password</label>
-            <input type="text" name="pswd" class="form-control" placeholder="Enter password"><br>
-            
+        <div class="row">
+            <div class="input-field col">
+                <label class="signup_text">Email</label>
+                <input type="text" name="user" class="form-control" placeholder="Enter email"><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col">
+                <label class="signup_text">password</label>
+                <input type="password" name="pswd" class="form-control" placeholder="Enter password"><br>
+            </div>
+        </div>    
             <input type="submit" name="submit" class="submit_btn" value="Login">
             <?php echo "<div>$error</div>" ?>
         </form>

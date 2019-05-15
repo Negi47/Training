@@ -2,7 +2,12 @@
 <?php require "./database/dataconnect.php";
 
   $error = "";
+  $reterive_data = "select * from feedback order by eid DESC limit 1";
+  $store = $con->query($reterive_data);
+  $rslt = $store->fetch_assoc();
+  // print_r($rslt);
   if(isset($_POST['submit'])) {
+
 
     $exec = $_POST["presentation"];
     $topic = $_POST["topic"];
@@ -16,8 +21,8 @@
       }
       else
       {
-       
-        $insert_data = "insert into feedback2(presentation,topic,level,res ,future,recc) values('$exec','$topic','$level','$res','$future','$recc')";
+        
+        $insert_data = "update feedback set presentation='$exec',topic='$topic',level='$level',res='$res' ,future='$future',recc='$recc' where eid=".$rslt['eid'];
         $res = $con->query($insert_data);
         if(!$res)
         {

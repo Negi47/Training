@@ -4,9 +4,7 @@
   $tabledata = array();
   if(isset($_POST['submit'])) {
 
-		$retrieve_data = "select * from feedback.empname,feedback.dept,feedback.training,feedback.org,feedback.date,feeback2.presentation,
-											feedback2.topic,feedback2.level,feedback2.res,feedback2.future,feedback2.recc from feedback 
-											inner join feedback2 on feedback.eid=feedback2.eid ";
+		$retrieve_data = "select * from feedback";
 		
 		$result = $con->query($retrieve_data);
 		if($result->num_rows > 0)

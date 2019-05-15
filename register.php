@@ -66,7 +66,7 @@ if (isset($_POST['submit']))  {
     else
     {
         
-        $insert_data = "insert into adminlogin(username,name,email,password) values('$user','$name','$email','$pswd')";
+        $insert_data = "insert into admin(name,username,email,password) values('$name','$user','$email','$pswd')";
         $con->query($insert_data);
         header("location: feedback.php");        
     }

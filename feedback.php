@@ -17,13 +17,18 @@
       {
         $insert_data = "insert into feedback(empname,dept,training,org,date) values('$ename','$dept','$training','$org','$date')";
         $con->query($insert_data);
-        header("location: nxtwindow.php");
+
+        if($con)
+          echo"inserted";
+          // header("location: nxtwindow.php");
+        else
+          echo "$con->error";
       }   
   }
 ?>
   
   <h2>
-    <span>FEEDBACK  ON  TRAINING<span>
+    <center><span>FEEDBACK  ON  TRAINING<span></center>
   </h2>
   
   <div class="feedback">

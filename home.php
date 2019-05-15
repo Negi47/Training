@@ -1,5 +1,3 @@
-<?php include "./database/dataconnect.php" ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,36 +9,39 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="./styles/feedback.css">
-  <link rel="stylesheet" href="./styles/nxtwindow.css">
-  <link rel="stylesheet" href="./styles/admin.css">
-  <link rel="stylesheet" href="./styles/header.css">
-  <link rel="stylesheet" href="./styles/hod.css">
-  <link rel="stylesheet" href="./styles/hodreview.css">
+  <link rel="stylesheet" href="./styles/home.css">
 </head>
-<body>
+<style>
+body{
+    background-image: url(./Images/backgroundimg.jpg);
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    background-size: cover !important;
+}
+</style>
 
+<body >
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" id="header">
   <div class="navbar-brand-left" id="leftimg" href="#"><img src="Images/brand.png" class="img-responsive"></div>
   <div class="head_body"><span class="navbar-text">RAMAIAH INSTITUE OF MANAGEMENT AND SCIENCES</span></div>
   <ul class="navbar-nav">
-
-    <?php 
-    
-    $url = "http://localhost/TeacherTraining/test.php";
-
-    $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
-                "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
-                $_SERVER['REQUEST_URI']; 
-
-    if ($link==$url):
-    
-    ?>
-
-    <li class="nav-item">
-      <button type="button" name="Log" value="Logout" >Logout</button> 
-    </li>
-
-    <?php endif; ?>
   </ul>
 </nav>
+<center>
+<div>
+<input type="submit" name="submit" class="btn btn-primary" value="Register" onclick="myregister()">
+<input type="submit" name="submit" class="btn btn-primary" value="Login" onclick="mylogin()">
+</div>
+</center>
+<script>
+function mylogin() {
+  location.replace("login.php");
+}
+function myregister() {
+    location.replace("register.php");
+}
+</script>
+</body>
+</html>
+
