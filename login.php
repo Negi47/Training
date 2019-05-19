@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-
+<div class="maindiv">
 <div class="signup">
     <center><h2 class="signup_header">Login</h2></center>
         <form action="" method ="POST" >
@@ -47,8 +47,13 @@ if (isset($_POST['submit'])) {
                 <label class="signup_text">password</label>
                 <input type="password" name="pswd" class="form-control" placeholder="Enter password"><br>
             </div>
-        </div>    
-            <input type="submit" name="submit" class="submit_btn" value="Login">
+        </div>
+        <input type="submit" name="submit" class="btn btn-primary" value="Login"> 
+        <button class="btn btn-primary"><a href="register.php" style="color: white;">New to Login</a></button>  
+
+            <!--<input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Login">-->
+            <!--<input type="submit" name="submit" class="submit_btn" value="Login">-->
             <?php echo "<div>$error</div>" ?>
         </form>
+</div>
 </div>

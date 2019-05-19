@@ -28,11 +28,12 @@
         {
           echo "$con->error";
         }
-        echo("done");
+        echo "<script type=\"text/javascript\">window.alert('Data Entered');
+        window.location.href = './home.php';</script>";
       }   
 }
 ?>
-  
+<div class="maindiv">
 <center>
   <label class="heading"> Presentation by faculty</label>
 </center>
@@ -47,7 +48,7 @@
       <br>
 
     <label class="topic">Coverage of topic: </label><br>
-      <textarea name="topic" class="txtarea">Enter text here..</textarea><br>
+      <textarea name="topic" class="txtarea"></textarea><br>
 
     <label class="level">Your level of understaning</label>
       <input type="radio" name="level" value="Good">Good
@@ -56,7 +57,7 @@
       <br>
       
     (Specify briefly reasons)<br>
-    <textarea name="res" class="txtarea">Enter text here..</textarea><br>
+    <textarea name="res" class="txtarea"></textarea><br>
 
     <label class="future">Do you want such programs in future:</label>
       <input type="radio" name="future" value="Yes">Yes
@@ -64,9 +65,10 @@
       <br>
 
     <label class ="recommend">if Yes, what topics would you recommend?</label><br>
-    <textarea name="recc" class="txtarea">Enter text here..</textarea><br>
+    <textarea name="recc" class="txtarea"></textarea><br>
     
     <input type="submit" name="submit" value="Submit">
   
   </form>      
+</div>
 </div>

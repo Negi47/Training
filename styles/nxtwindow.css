@@ -14,4 +14,8 @@
 /* .txtarea{
     margin: 2px 25px -19px 8px;
     /* padding: 8px 13px 2px 13px; */
-} */
+
+.exec,.topic,.level,.res,.future,.recommend{
+font-weight: 600;
+    font-family: serif;
+}

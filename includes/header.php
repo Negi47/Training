@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/hod.css">
   <link rel="stylesheet" href="./styles/hodreview.css">
+  <link rel="stylesheet" href="./styles/hod.css">
 </head>
 <body>
 

@@ -68,7 +68,7 @@ if (isset($_POST['submit']))  {
         
         $insert_data = "insert into admin(name,username,email,password) values('$name','$user','$email','$pswd')";
         $con->query($insert_data);
-        header("location: feedback.php");        
+        header("location: login.php");        
     }
  ?>
 <div class="maindiv">
@@ -108,14 +108,26 @@ if (isset($_POST['submit']))  {
                     </div>
                     <div class="input-field col s6">
                         <label class="signup_text">Confirm Password</label><br>
-                        <input type="password" class="form-control" name="cnfrmpswd" placeholder="Enter confirm password" value="<?php echo $cnfrmpswd;?>">
+                        <input type="password" class="form-control" name="cnfrmpswd" placeholder="Confirm Password" value="<?php echo $cnfrmpswd;?>">
                                 <span class="form-text text-muted" id="error">* 
                                     <?php echo $cnfrmpswdErr;?>
                             </span><br>
                     </div>
                 </div>
-                <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Register">
+
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Register">    
+                  </div>
+                  <div class="input-field col s6">
+                    <button type="button" name="cancel" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='home.php'">Cancel</button>    
+                  </div>
+                </div>
             </form>
     </div> 
 </div> 
+<!-- 
+<script type="text/javascript">
 
+  $("#cancel").function()
+</script> -->

@@ -1,0 +1,13 @@
+.maindiv{
+    display: flex;
+    justify-content: center;
+
+}
+.lightbox2{
+    width: 28%;
+    margin-top: 4%;
+    background-color: #f8f9fa9e;
+}
+.signup{
+    width: 50%;
+}
