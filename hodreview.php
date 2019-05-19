@@ -21,7 +21,7 @@
           echo "$con->error";
 				}
 				
-				header('location: examplepdf.php?eid='.$eid);	
+				header('location: generatepdf.php?eid='.$eid);	
 			}
 }
 ?>
