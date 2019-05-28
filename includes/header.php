@@ -13,17 +13,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./styles/feedback.css">
   <link rel="stylesheet" href="./styles/nxtwindow.css">
-  <link rel="stylesheet" href="./styles/admin.css">
   <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/hod.css">
   <link rel="stylesheet" href="./styles/hodreview.css">
-  <link rel="stylesheet" href="./styles/hod.css">
+  <link rel="stylesheet" href="./styles/register.css">
+  <link rel="stylesheet" href="./styles/login.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" id="header">
   <div class="navbar-brand-left" id="leftimg" href="#"><img src="Images/brand.png" class="img-responsive"></div>
-  <div class="head_body"><span class="navbar-text">RAMAIAH INSTITUE OF MANAGEMENT AND SCIENCES</span></div>
+  <div class="head_body"><span class="navbar-text">RAMAIAH INSTITUE OF TECHNOLOGY</span></div>
   <ul class="navbar-nav">
 
     <?php 

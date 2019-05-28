@@ -8,7 +8,6 @@
   // print_r($rslt);
   if(isset($_POST['submit'])) {
 
-
     $exec = $_POST["presentation"];
     $topic = $_POST["topic"];
     $level = $_POST["level"];
@@ -34,41 +33,60 @@
 }
 ?>
 <div class="maindiv">
-<center>
-  <label class="heading"> Presentation by faculty</label>
-</center>
-<div class="nxtwindow">
-  <form action="" method="POST">
-    
-    <label class="exec">Excellent:</label>
-      <input type="radio" name="presentation" value="Good">Good
-      <input type="radio" name="presentation" value="Average">Average
-      <input type="radio" name="presentation" value="Poor">Poor
-      <input type="radio" name="presentation" value="very poor">very poor
-      <br>
+    <div class="nxtlightbox">
+      <center>
+          <label class="heading"> Presentation by Faculty</label>
+      </center>
+      <div class="nxtwindow">
+            <form action="" method="POST">
+              
+              <label class="nxtwnd_text">Excellent:</label>
+                <span class="radio_btn">
+                  <input type="radio" name="presentation" value="Good"> Good
+                </span>
+                <span class="radio_btn">
+                  <input type="radio" name="presentation" value="Average"> Average
+                </span>
+                <span class="radio_btn">
+                  <input type="radio" name="presentation" value="Poor"> Poor
+                </span>
+                <span class="radio_btn"> 
+                  <input type="radio" name="presentation" value="very poor"> Very Poor
+                </span>
+                <br>
 
-    <label class="topic">Coverage of topic: </label><br>
-      <textarea name="topic" class="txtarea"></textarea><br>
+              <label class="nxtwnd_text">Coverage of topic: </label><br>
+                <textarea name="topic" class="txtarea"></textarea><br>
 
-    <label class="level">Your level of understaning</label>
-      <input type="radio" name="level" value="Good">Good
-      <input type="radio" name="level" value="Average">Average
-      <input type="radio" name="level" value="Poor">Poor
-      <br>
-      
-    (Specify briefly reasons)<br>
-    <textarea name="res" class="txtarea"></textarea><br>
+              <label class="nxtwnd_text">Your level of understaning</label>
+                <span class="radio_btn">
+                  <input type="radio" name="level" value="Good"> Good
+                </span>
+                <span class="radio_btn">
+                  <input type="radio" name="level" value="Average"> Average
+                </span>
+                <span class="radio_btn">
+                <input type="radio" name="level" value="Poor"> Poor
+                </span>
+                
+              <span class="nxtwnd_text">(Specify briefly reasons)<br></span>
+              <textarea name="res" class="nxtwnd_text"></textarea><br>
 
-    <label class="future">Do you want such programs in future:</label>
-      <input type="radio" name="future" value="Yes">Yes
-      <input type="radio" name="future" value="Poor">No
-      <br>
+              <label class="nxtwnd_text">Do you want such programs in future:</label>
+              <span class="radio_btn">
+                <input type="radio" name="future" value="Yes"> Yes
+              </span>
+              <span class="radio_btn">
+                <input type="radio" class="nxtwnd_text" name="future" value="Poor"> No
+              </span>
+                <br>
 
-    <label class ="recommend">if Yes, what topics would you recommend?</label><br>
-    <textarea name="recc" class="txtarea"></textarea><br>
-    
-    <input type="submit" name="submit" value="Submit">
-  
-  </form>      
-</div>
+              <label class ="nxtwnd_text">if Yes, what topics would you recommend?</label><br>
+              <textarea name="recc" class="txtarea"></textarea><br><br>
+              
+              <input type="submit" class="btn btn-primary nxt-btn" name="submit" value="Submit">
+            
+            </form>      
+      </div>
+  </div>
 </div>

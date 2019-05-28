@@ -16,47 +16,47 @@
 	}
 ?>
 
-<div class="maindiv">
-	<div class="row">
-		<div class="input-field col s12">
-		<table>
-				<tr>
-					<th>Employee Name</th>
-					<th>Department</th>
-					<th>Training</th>
-					<th>Organization</th>
-					<th>Date</th>
-					<th>Presentation</th>
-					<th>Topic</th>
-					<th>Level</th>
-					<th>Reason</th>
-					<th>Future</th>
-					<th>Recommended</th>
-				</tr>
 
-				<?php  
-					foreach ($tabledata as $value) {
-						echo "<tr>";
-						echo "<td>" . $value['empname'] . "</td>";
-						echo "<td>" . $value['dept'] . "</td>";
-						echo "<td>" . $value['training'] . "</td>";
-						echo "<td>" . $value['org'] ."</td>";
-						echo "<td>" . $value['date'] ."</td>";
-						echo "<td>" . $value['presentation'] . "</td>";
-						echo "<td>" . $value['topic'] . "</td>";
-						echo "<td>" . $value['level'] . "</td>";
-						echo "<td>" . $value['res'] . "</td>";
-						echo "<td>" . $value['future'] ."</td>";
-						echo "<td>" . $value['recc'] ."</td>";
-						// echo "<td>" ."<input type='button' name='btn' value='review' class='review_form_btn'>". "</tr>";
-						echo "<td><button><a href='hod.php?eid=". $value['eid'] ."'>review</a></button></td>";
-						echo "</tr>";
-					}
-				?>
-			</table>
-		</div>
+<div class="row">
+	<div class="input-field col s12">
+		<table>
+					<tr>
+						<th>Employee Name</th>
+						<th>Department</th>
+						<th>Training</th>
+						<th>Organization</th>
+						<th>Date</th>
+						<th>Presentation</th>
+						<th>Topic</th>
+						<th>Level</th>
+						<th>Reason</th>
+						<th>Future</th>
+						<th>Recommended</th>
+					</tr>
+
+					<?php  
+						foreach ($tabledata as $value) {
+							echo "<tr>";
+							echo "<td>" . $value['empname'] . "</td>";
+							echo "<td>" . $value['dept'] . "</td>";
+							echo "<td>" . $value['training'] . "</td>";
+							echo "<td>" . $value['org'] ."</td>";
+							echo "<td>" . $value['date'] ."</td>";
+							echo "<td>" . $value['presentation'] . "</td>";
+							echo "<td>" . $value['topic'] . "</td>";
+							echo "<td>" . $value['level'] . "</td>";
+							echo "<td>" . $value['res'] . "</td>";
+							echo "<td>" . $value['future'] ."</td>";
+							echo "<td>" . $value['recc'] ."</td>";
+							// echo "<td>" ."<input type='button' name='btn' value='review' class='review_form_btn'>". "</tr>";
+							echo "<td><button><a href='hod.php?eid=". $value['eid'] ."'>review</a></button></td>";
+							echo "</tr>";
+						}
+					?>
+				</table>
+			</div>
 		
-	</div>
+
 
 
 <!-- Review Box -->

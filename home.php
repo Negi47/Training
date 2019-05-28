@@ -24,22 +24,27 @@ body{
 <body >
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" id="header">
   <div class="navbar-brand-left" id="leftimg" href="#"><img src="Images/brand.png" class="img-responsive"></div>
-  <div class="head_body"><span class="navbar-text">RAMAIAH INSTITUE OF MANAGEMENT AND SCIENCES</span></div>
+  <div class="head_body"><span class="navbar-text">RAMAIAH INSTITUE OF TECHNOLOGY</span></div>
   <ul class="navbar-nav">
   </ul>
 </nav>
-<center>
-<div>
-<input type="submit" name="submit" class="btn btn-primary" value="Register" onclick="myregister()">
-<input type="submit" name="submit" class="btn btn-primary" value="Login" onclick="mylogin()">
+
+<div class="main-container">
+  <div class="container float-left" >
+    <img src="Images/hod.png" class="rounded-circle hodimg" width="236" height="236">
+    <input type="submit" name="submit" class="btn btn-primary homebtn" value="HOD Login" onclick="myhodlogin()">
+  </div>
+  <div class="container float-right">
+    <img src="Images/hod.png" class="rounded-circle hodimg" width="236" height="236">
+    <input type="submit" name="submit" class="btn btn-primary homebtn" value="FACULTY Login" onclick="mylogin()">
+  </div>
 </div>
-</center>
 <script>
 function mylogin() {
   location.replace("login.php");
 }
-function myregister() {
-    location.replace("register.php");
+function myhodlogin() {
+    location.replace("login.php");
 }
 </script>
 </body>

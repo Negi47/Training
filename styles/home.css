@@ -22,3 +22,19 @@ img{
     font-size: 22px;
     color: white !important;
 }
+
+.hodimg{
+    width: 33%;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    margin: 16% 0% 0% 20%;
+}
+
+.homebtn{
+    display: flex;
+    justify-content: center;
+    margin: 7%;
+}

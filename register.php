@@ -1,11 +1,9 @@
 <?php include "./includes/header.php" ?>
 <?php require "./database/dataconnect.php";
 
+$userErr = $nameErr = $profErr = $pswdErr = $emailErr = $cnfrmpswdErr = "" ;
 
-$userErr = $nameErr= $pswdErr = $emailErr = $cnfrmpswdErr= "" ;
-
-$user = $name= $pswd = $email = $cnfrmpswd= "";
-
+$user = $name = $prof = $pswd = $email = $cnfrmpswd = "";
 
 if (isset($_POST['submit']))  {
     if (empty($_POST["name"])) {
@@ -26,6 +24,12 @@ if (isset($_POST['submit']))  {
       if (!preg_match("/^[a-zA-Z0-9]*$/",$user)) {
         $userErr = "only letters and numbers allowed"; 
       }
+    }
+
+    if(empty($_POST['professions'])) {
+      $profErr = "Profession is required";
+    }else {
+      $prof = $_POST['professions'];
     }
     
     if (empty($_POST["email"])) {
@@ -56,25 +60,24 @@ if (isset($_POST['submit']))  {
       }else{
             $pswdErr = "Does not match";
       }
-
-
   }
 
-    if(empty($user) ||empty($name) || empty($pswd) ||empty($cnfrmpswd) || empty($email)){
+    if(empty($user) ||empty($name) || empty($prof) || empty($pswd) ||empty($cnfrmpswd) || empty($email)){
 
     }
     else
-    {
-        
-        $insert_data = "insert into admin(name,username,email,password) values('$name','$user','$email','$pswd')";
-        $con->query($insert_data);
-        header("location: login.php");        
+    {  
+      $insert_data = "insert into admin(name,username,professions,email,password) values('$name','$user','$prof','$email','$pswd')";
+      $con->query($insert_data);
+      header("location: login.php");        
     }
  ?>
 <div class="maindiv">
-
+  <div class="signupbox">
     <div class="signup">
-        <center><h3 class="signup_header">Signup</h3></center>
+        <center>
+          <h3 class="signup_header">Signup</h3>
+        </center>
             <form action="" method ="POST" >
             <div class="row">
                 <div class="input-field col s6">
@@ -84,7 +87,6 @@ if (isset($_POST['submit']))  {
                             <?php echo $nameErr;?>
                         </span>
                 </div>
-
                 <div class="input-field col s6">
                     <label class="signup_text">Username</label><br>
                     <input type="text" class="form-control" name="user" placeholder="Enter username" value="<?php echo $user;?>">
@@ -93,6 +95,13 @@ if (isset($_POST['submit']))  {
                         </span>
                 </div>
             </div>
+                <label for="professions" class="signup_text">Select Designation:</label>
+                  <select class="form-control" id="sel1" name="professions">
+                    <option value="Faculty">Faculty</option>
+                    <option value="HOD">HOD</option>
+                  </select>
+                  <br>
+
                 <label class="signup_text">EmailId</label><br>
                 <input type="text" class="form-control" name="email" placeholder="Enter email" value="<?php echo $email;?>">
                     <span class="form-text text-muted" id="error">* 
@@ -111,10 +120,9 @@ if (isset($_POST['submit']))  {
                         <input type="password" class="form-control" name="cnfrmpswd" placeholder="Confirm Password" value="<?php echo $cnfrmpswd;?>">
                                 <span class="form-text text-muted" id="error">* 
                                     <?php echo $cnfrmpswdErr;?>
-                            </span><br>
+                                </span><br>
                     </div>
                 </div>
-
                 <div class="row">
                   <div class="input-field col s6">
                     <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Register">    
@@ -124,10 +132,6 @@ if (isset($_POST['submit']))  {
                   </div>
                 </div>
             </form>
-    </div> 
+    </div>
+  </div> 
 </div> 
-<!-- 
-<script type="text/javascript">
-
-  $("#cancel").function()
-</script> -->

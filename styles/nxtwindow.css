@@ -2,20 +2,39 @@
     width: 36%;
     padding: 3% 3% 2% 4%;
     margin: auto;
-    box-shadow: 0 0 4px 2px #716b6b;
+    box-shadow: 0 0 4px 2px #000000bd;
+    background-color: #dee2e685;
 }
 
 .heading{
-    font-family: sans-serif;
+    font-family: serif;
     font-size: xx-large;
     margin-top: 1%;
     margin-bottom: 1%;
 }
-/* .txtarea{
-    margin: 2px 25px -19px 8px;
-    /* padding: 8px 13px 2px 13px; */
 
-.exec,.topic,.level,.res,.future,.recommend{
-font-weight: 600;
+.nxtlightbox{
+    height: 100%;
+    width: 100%;
+    background-color: #6c757d17;
+    
+
+}
+.nxtwnd_text{
     font-family: serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+.nxt-btn{
+    display:flex;
+    justify-content: center;
+    margin:auto;
+    width: 29%;
+}
+.radio_btn{
+    font-family: serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 3px;
+    
 }
